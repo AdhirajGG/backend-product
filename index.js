@@ -15,13 +15,13 @@ app.use(express.json()) //Allow us to accept JSON data in the req.body
 
 app.use("/api/products",productRoutes)
 
-if(process.env.NODE_ENV==='production'){
-    app.use(express.static(path.join(__dirname,'/Frontend/dist')))
+// if(process.env.NODE_ENV==='production'){
+//     app.use(express.static(path.join(__dirname,'/Frontend/dist')))
 
-    app.get('*',(req,res)=>{
-        res.sendFile(path.resolve(__dirname,'Frontend','dsit','index.html'))
-    })
-}
+//     app.get('*',(req,res)=>{
+//         res.sendFile(path.resolve(__dirname,'Frontend','dsit','index.html'))
+//     })
+// }
 
 // console.log(process.env.MONGO_URI)
 app.listen(PORT, () => {
